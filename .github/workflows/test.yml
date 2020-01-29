@@ -9,9 +9,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: run
-        run: docker run -v $GITHUB_WORKSPACE/practice-docker-pdflatex:/workdir texlive/texlive-full pdflatex main.tex
+        run: docker run -v $GITHUB_WORKSPACE/practice-docker-pdflatex/practice-docker-pdflatex:/workdir texlive/texlive-full pdflatex main.tex
       - name: upload
         uses: actions/upload-artifact@v1
         with:
           name: paper
-          path: $GITHUB_WORKSPACE/practice-docker-pdflatex/main.tex
+          path: $GITHUB_WORKSPACE/practice-docker-pdflatex/practice-docker-pdflatex/main.tex
