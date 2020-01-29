@@ -11,9 +11,9 @@ jobs:
       - name: show
         run: ls -R
       - name: show2
-        run: docker run -v ${pwd}:/root texlive/texlive-full pwd
+        run: docker run -v ${pwd}:/ texlive/texlive-full pwd
       - name: run
-        run: docker run -v ${pwd}:/root texlive/texlive-full pdflatex main.tex
+        run: docker run -v ${pwd}:/ texlive/texlive-full pdflatex main.tex
       - name: upload
         uses: actions/upload-artifact@v1
         with:
