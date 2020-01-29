@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: show
+        run: ls -R
       - name: run
         run: docker run -v $GITHUB_WORKSPACE/practice-docker-pdflatex/practice-docker-pdflatex:/workdir texlive/texlive-full pdflatex main.tex
       - name: upload
