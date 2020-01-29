@@ -13,7 +13,7 @@ jobs:
       - name: show2
         run: docker run -v ${pwd}:/ texlive/texlive-full pwd
       - name: show3
-        run: docker run -v ${pwd}:/ texlive/texlive-full "ls /home"
+        run: docker run -v ${pwd}:/ texlive/texlive-full 'ls -R /home'
       - name: run
         run: docker run -v ${pwd}:/ texlive/texlive-full pdflatex main.tex
       - name: upload
