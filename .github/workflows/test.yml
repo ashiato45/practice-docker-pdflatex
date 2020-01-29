@@ -11,9 +11,9 @@ jobs:
       - name: show
         run: ls -R
       - name: run
-        run: docker run -v $GITHUB_WORKSPACE:/workdir texlive/texlive-full pdflatex main.tex
+        run: docker run -v .:/workdir texlive/texlive-full pdflatex main.tex
       - name: upload
         uses: actions/upload-artifact@v1
         with:
           name: paper
-          path: $GITHUB_WORKSPACE/main.tex
+          path: ./main.tex
