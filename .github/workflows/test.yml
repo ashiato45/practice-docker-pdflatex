@@ -11,11 +11,11 @@ jobs:
       - name: show
         run: ls -R
       - name: show2
-        run: docker run -v ${pwd}:/home -w /home texlive/texlive-full pwd
+        run: docker run -v ${pwd}:/work -w /work texlive/texlive-full pwd
       - name: show3
-        run: docker run -v ${pwd}:/home -w /home texlive/texlive-full ls -R /home
+        run: docker run -v ${pwd}:/work -w /work texlive/texlive-full ls -R /work
       - name: run
-        run: docker run -v ${pwd}:/home -w /home texlive/texlive-full pdflatex main.tex
+        run: docker run -v ${pwd}:/work -w /work texlive/texlive-full pdflatex main.tex
       - name: upload
         uses: actions/upload-artifact@v1
         with:
