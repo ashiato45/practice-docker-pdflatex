@@ -10,6 +10,8 @@ jobs:
         uses: actions/checkout@v2
       - name: show
         run: ls -R
+      - name: show2
+        run: docker run -v ${pwd}:/root texlive/texlive-full pwd
       - name: run
         run: docker run -v ${pwd}:/root texlive/texlive-full pdflatex main.tex
       - name: upload
